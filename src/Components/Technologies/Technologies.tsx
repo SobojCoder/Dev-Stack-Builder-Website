@@ -2,13 +2,25 @@ import React, { use } from "react";
 import type { TechnologiesType } from "../../TechnologiesType";
 import TechnologiesCard from "./TechnologiesCard/TechnologiesCard";
 import StackCard from "./StackCard";
-import Footer from "./Footer";
+import Footer from "../Footer/Footer";
 interface technologiesProps {
   technologiesPromise: Promise<TechnologiesType[]>;
+  technologiesCount: number;
+  setTechnologiesCount: React.Dispatch<React.SetStateAction<number>>;
+  selectedTechnologies: TechnologiesType[];
+  setSelectedTechnologies: React.Dispatch<
+    React.SetStateAction<TechnologiesType[]>
+  >;
 }
-const Technologies = ({ technologiesPromise }: technologiesProps) => {
+const Technologies = ({
+  selectedTechnologies,
+  setSelectedTechnologies,
+  technologiesPromise,
+  technologiesCount,
+  setTechnologiesCount,
+}: technologiesProps) => {
   const technologies = use(technologiesPromise);
-  console.log(technologies);
+
   return (
     <div>
       <div className="container mx-auto px-12">
@@ -23,23 +35,37 @@ const Technologies = ({ technologiesPromise }: technologiesProps) => {
         </p>
       </div>
       {/* card */}
-      <div className="grid grid-cols-4 gap-6 container mx-auto px-12 mt-12 ">
-        <div className="col-span-3">
-            {/* technology card */}
+      <div className="grid grid-cols-6 gap-6 container mx-auto px-12 mt-12 ">
+        <div className="col-span-4">
+          {/* technology card */}
           <div className="grid grid-cols-3 gap-4">
             {technologies.map((technology: TechnologiesType) => {
-              return <TechnologiesCard technology={technology} />;
+              return (
+                <TechnologiesCard
+                  key={technology.id}
+                  technology={technology}
+                  technologiesCount={technologiesCount}
+                  setTechnologiesCount={setTechnologiesCount}
+                  selectedTechnologies={selectedTechnologies}
+                  setSelectedTechnologies={setSelectedTechnologies}
+                />
+              );
             })}
           </div>
         </div>
         {/* stack card */}
-        <div>
-            <StackCard/>
+        <div className="col-span-2">
+          <StackCard
+            technologiesCount={technologiesCount}
+            setTechnologiesCount={setTechnologiesCount}
+            selectedTechnologies={selectedTechnologies}
+            setSelectedTechnologies={setSelectedTechnologies}
+          />
         </div>
       </div>
-              <div className="divider"/>
+      <div className="divider" />
       <footer>
-        <Footer/>
+        <Footer />
       </footer>
     </div>
   );
