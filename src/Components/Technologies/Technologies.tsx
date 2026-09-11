@@ -13,7 +13,7 @@ const Technologies = ({ technologiesPromise }: technologiesProps) => {
     <div>
       <div className="container mx-auto px-12">
         <h1 className="text-4xl font-bold">
-          Explore the{" "}
+          Explore the
           <span className="bg-linear-to-r from-[#F97316]  to-[#EC4899] bg-clip-text text-transparent">
             Technologies
           </span>
@@ -37,7 +37,7 @@ const Technologies = ({ technologiesPromise }: technologiesProps) => {
             <StackCard/>
         </div>
       </div>
-
+              <div className="divider"/>
       <footer>
         <Footer/>
       </footer>
