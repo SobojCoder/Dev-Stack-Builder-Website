@@ -1,6 +1,8 @@
 import React, { use } from "react";
 import type { TechnologiesType } from "../../TechnologiesType";
 import TechnologiesCard from "./TechnologiesCard/TechnologiesCard";
+import StackCard from "./StackCard";
+import Footer from "./Footer";
 interface technologiesProps {
   technologiesPromise: Promise<TechnologiesType[]>;
 }
@@ -20,17 +22,25 @@ const Technologies = ({ technologiesPromise }: technologiesProps) => {
           Pick one technology per category to build your ideal stack.
         </p>
       </div>
-      <div className="grid grid-cols-4 gap-3 container mx-auto px-12 mt-12">
+      {/* card */}
+      <div className="grid grid-cols-4 gap-6 container mx-auto px-12 mt-12 ">
         <div className="col-span-3">
-      <div className="grid grid-cols-3 gap-8">
-            { technologies.map((technology:TechnologiesType) => {
-          return (
-           <TechnologiesCard technology= {technology}/>
-          );
-        })}
+            {/* technology card */}
+          <div className="grid grid-cols-3 gap-4">
+            {technologies.map((technology: TechnologiesType) => {
+              return <TechnologiesCard technology={technology} />;
+            })}
+          </div>
         </div>
+        {/* stack card */}
+        <div>
+            <StackCard/>
         </div>
       </div>
+
+      <footer>
+        <Footer/>
+      </footer>
     </div>
   );
 };
