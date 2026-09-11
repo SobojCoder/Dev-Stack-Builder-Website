@@ -50,12 +50,12 @@ const TechnologiesCard = ({
           </h3>
 
           {/* Description */}
-          <p className="mb-5 min-h-[60px] text-sm leading-6 text-slate-500">
+          <p className="mb-5 min-h-15 text-sm leading-6 text-slate-500">
             {technology.description}
           </p>
 
           {/* Divider */}
-          <div className="mb-4 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+          <div className="mb-4 h-px bg-linear-to-r from-transparent via-slate-200 to-transparent" />
 
           {/* Technology information */}
           <div className="mb-5 flex items-center justify-between gap-2">

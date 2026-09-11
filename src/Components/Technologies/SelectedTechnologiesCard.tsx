@@ -31,7 +31,7 @@ const SelectedTechnologiesCard = ({
       className="flex gap-2 justify-between items-center border-2 border-gray-200 rounded-3xl px-3 py-2 text-center"
     >
       <div className="flex gap-2">
-        <img src={technology.icon} alt="" className="w-[40px] h-[60px]" />
+        <img src={technology.icon} alt="" className="w-10 h-15" />
         <div>
           <h3 className="text-xl font-semibold">{technology.name}</h3>
           <p className="text-slate-500">{technology.category}</p>

@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "../../assets/logo.png";
 import { AiOutlineCopyright } from "react-icons/ai";
 
@@ -6,9 +5,9 @@ const Footer = () => {
   return (
     <footer>
       <div className="border-t border-[#E8E8E8]" />
-      <div className="mt-20 container mx-auto px-12 grid grid-cols-5 gap-4">
-        <div className="col-span-2">
-          <div className="col-span-1 flex justify-items-start gap-2 mb-4">
+      <div className="mt-20 container mx-auto px-6 lg:px-12 lg:grid grid-cols-5 gap-4">
+        <div className="col-span-2 text-center lg:text-start">
+          <div className="col-span-1 flex justify-center lg:justify-start gap-2 mb-4">
             <img src={logo} alt="logo" />
             <h2 className="text-2xl font-bold">
               Dev<span className="text-[#DB2777]">Stack</span>
@@ -20,7 +19,7 @@ const Footer = () => {
           </p>
           {/* social link */}
           <div className="my-8">
-            <ul className="flex justify-start gap-6">
+            <ul className="flex justify-center lg:justify-start gap-6">
               <a href="">
                 <li className="text-[#2f3a48]">GITHUB</li>
               </a>
@@ -33,7 +32,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="col-span-3 grid grid-cols-3">
+        <div className="col-span-3 hidden lg:grid grid-cols-3">
           <div>
             <h4 className="text-lg mb-3 font-semibold">PRODUCT</h4>
             <ul>

@@ -2,7 +2,6 @@ import React, { use } from "react";
 import type { TechnologiesType } from "../../TechnologiesType";
 import TechnologiesCard from "./TechnologiesCard/TechnologiesCard";
 import StackCard from "./StackCard";
-import Footer from "../Footer/Footer";
 interface technologiesProps {
   technologiesPromise: Promise<TechnologiesType[]>;
   technologiesCount: number;
@@ -23,8 +22,8 @@ const Technologies = ({
 
   return (
     <div>
-      <div className="container mx-auto px-12">
-        <h1 className="text-4xl font-bold">
+      <div className=" container mx-auto px-6 lg:px-12 text-2xl text-center lg:text-start">
+        <h1 className=" lg:text-4xl font-bold">
           Explore the
           <span className="bg-linear-to-r from-[#F97316]  to-[#EC4899] bg-clip-text text-transparent">
             Technologies
@@ -35,10 +34,10 @@ const Technologies = ({
         </p>
       </div>
       {/* card */}
-      <div className="grid grid-cols-6 gap-6 container mx-auto px-12 mt-12 ">
+      <div className="lg:grid grid-cols-6 gap-6 container mx-auto px-12 mt-12 ">
         <div className="col-span-4">
           {/* technology card */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
             {technologies.map((technology: TechnologiesType) => {
               return (
                 <TechnologiesCard
@@ -64,9 +63,7 @@ const Technologies = ({
         </div>
       </div>
       <div className="divider" />
-      <footer>
-        <Footer />
-      </footer>
+      
     </div>
   );
 };

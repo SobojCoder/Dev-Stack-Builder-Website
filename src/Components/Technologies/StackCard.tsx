@@ -38,7 +38,7 @@ const StackCard = ({
         </div>
 
         {/* Empty State */}
-        <div className="flex flex-col  rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-4 py-2 ">
+        <div className=" flex flex-col  rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-4 py-2 ">
           <div className="grid grid-cols-1 gap-7 px-0 py-1">
             {selectedTechnologies.length === 0 && (
               <p className="text-gray-600 text-center py-4">
