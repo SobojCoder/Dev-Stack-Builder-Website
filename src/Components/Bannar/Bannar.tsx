@@ -1,5 +1,5 @@
 import React from "react";
-import banner from "../assets/banner-stack.png";
+import banner from "../../assets/banner-stack.png";
 const Bannar = () => {
   return (
     <div className="grid grid-cols-2 container mx-auto px-12 ">
