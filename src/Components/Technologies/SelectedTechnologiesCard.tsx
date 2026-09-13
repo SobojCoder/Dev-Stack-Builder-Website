@@ -1,6 +1,7 @@
 import React from "react";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import type { TechnologiesType } from "../../TechnologiesType";
+import { toast } from "react-toastify";
 interface SelectedTechnologiesCardProps {
   technology: TechnologiesType;
   technologiesCount: number;
@@ -22,6 +23,7 @@ const SelectedTechnologiesCard = ({
       (selectedTechnology) =>
         selectedTechnology.name !== technologyToRemove.name,
     );
+    toast.error("Remove to stack")
     setSelectedTechnologies(restTechnologies);
     setTechnologiesCount(technologiesCount - 1);
   };

@@ -2,6 +2,7 @@ import React from "react";
 import type { TechnologiesType } from "../../TechnologiesType";
 import SelectedTechnologiesCard from "./SelectedTechnologiesCard";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { toast } from "react-toastify";
 interface StackCardProps {
   technologiesCount: number;
   setTechnologiesCount: React.Dispatch<React.SetStateAction<number>>;
@@ -17,6 +18,7 @@ const StackCard = ({
   setSelectedTechnologies,
 }: StackCardProps) => {
   const handleRemoveAll = () => {
+    toast.error("remove all stack")
     setSelectedTechnologies([]);
     setTechnologiesCount(0);
   };
@@ -64,10 +66,10 @@ const StackCard = ({
           {selectedTechnologies.length != 0 ? (
             <div
               onClick={handleRemoveAll}
-              className=" cursor-pointer flex gap-2 justify-center items-center px-6 py-3  bg-red-400 text-[#ffff] mx-8 rounded-2xl"
+              className=" cursor-pointer border border-red-400 flex gap-2 justify-center items-center px-6 py-3  text-red-400  mx-8 rounded-2xl"
             >
               {" "}
-              <button className="text-xl">Close All </button>
+              <button className="text-xl cursor-pointer">Close All </button>
               <span className="text-2xl">
                 <IoCloseCircleOutline />
               </span>

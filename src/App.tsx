@@ -5,21 +5,14 @@ import Technologies from "./Components/Technologies/Technologies";
 import type { TechnologiesType } from "./TechnologiesType";
 import Footer from "./Components/Footer/Footer";
 
-const technologiesPromise = async (): Promise<TechnologiesType[]> => {
+const technologiesFetch = async (): Promise<TechnologiesType[]> => {
   const res = await fetch("/data.json");
-
-  console.log("Status:", res.status);
-  console.log("URL:", res.url);
-  console.log("Content-Type:", res.headers.get("content-type"));
-
-  const text = await res.text();
-  console.log("Response:", text);
-
-  const data = JSON.parse(text);
+  const data = await res.json();
   return data;
 };
 
 function App() {
+  const [technologiesPromise] =useState(()=> technologiesFetch());
   const [technologiesCount, setTechnologiesCount] = useState(0);
   const [selectedTechnologies, setSelectedTechnologies] = useState<
     TechnologiesType[]
@@ -36,7 +29,7 @@ function App() {
           setSelectedTechnologies={setSelectedTechnologies}
           technologiesCount={technologiesCount}
           setTechnologiesCount={setTechnologiesCount}
-          technologiesPromise={technologiesPromise()}
+          technologiesPromise={technologiesPromise}
         />
       </Suspense>
         <Footer />

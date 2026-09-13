@@ -7,9 +7,9 @@ const Nav = () => {
       <div className="container mx-auto px-6 lg:px-12 grid grid-cols-4 gap-4 items-center">
       <IoReorderThree className="lg:hidden block text-3xl cursor-pointer" />
         {/* logo section */}
-        <div className="col-span-1 flex justify-items-start gap-2">
+        <div className="col-span-1 flex justify-center md:justify -start gap-2">
           <img src={logo} alt="logo" />
-          <h2 className="text-2xl font-bold">Dev<span className="text-[#DB2777]">Stack</span></h2>
+          <h2 className="text-xl md:text-2xl font-bold">Dev<span className="text-[#DB2777]">Stack</span></h2>
         </div>
         {/* menu section */}
         <div className="lg:col-span-2">
